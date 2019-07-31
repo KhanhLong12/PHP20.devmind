@@ -12,5 +12,6 @@
 		'n' => $_GET['n'],
 		'dc' => $_GET['dc']
 	);
+	header('Location: list.php')
 
  ?>
