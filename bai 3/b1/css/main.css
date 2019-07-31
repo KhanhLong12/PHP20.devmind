@@ -29,3 +29,6 @@ p{
 	border-radius: 5px;
 	display: inline-block;
 }
+table, th, td {
+  border: 1px solid black;
+}

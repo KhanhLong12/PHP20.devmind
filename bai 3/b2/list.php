@@ -6,18 +6,23 @@
 <head>
 	<title>list</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 	<h1>Danh sách sinh viên</h1>
 	<a href="form.php"><button type="button" class="btn btn-success">Thêm mới</button></a>
 	<br>
-	<table>
-		<tr>
-			<th>Mã sinh viên</th>
-			<th>Họ tên</th>
-			<th>Action</th>
-		</tr>
-		<?php foreach ($_SESSION as $key => $value): ?>
+	<table class="table">
+  <thead class="thead-dark">
+    <tr>
+    	<th>Mã sinh viên</th>
+		<th>Họ tên</th>
+		<th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    		<?php foreach ($_SESSION as $key => $value): ?>
 			<tr>
 				<td><?=$_SESSION[$key]['sv']?></td>
 				<td><?=$_SESSION[$key]['ten']?></td>
@@ -27,7 +32,9 @@
 				</td>
 			</tr>
 		<?php endforeach ?>
-	</table>
+    </tr>
+  </tbody>
+</table>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
