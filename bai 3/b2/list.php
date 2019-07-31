@@ -23,13 +23,13 @@
   </thead>
   <tbody>
     <tr>
-    		<?php foreach ($_SESSION as $key => $value): ?>
+    		<?php foreach ($_SESSION['student'] as $key => $value): ?>
 			<tr>
-				<td><?=$_SESSION[$key]['sv']?></td>
-				<td><?=$_SESSION[$key]['ten']?></td>
+				<td><?=$_SESSION['student'][$key]['sv']?></td>
+				<td><?=$_SESSION['student'][$key]['ten']?></td>
 				<td>
-					<a href="detail.php?sv=<?=$_SESSION[$key]['sv']?>"><button type="btn" class="btn btn-success">Detail</button></a>
-					<a href="delete.php?sv=<?=$_SESSION[$key]['sv']?>"><button type="btn2" class="btn btn-danger">Delete</button></a>
+					<a href="detail.php?sv=<?=$_SESSION['student'][$key]['sv']?>"><button type="btn" class="btn btn-success">Detail</button></a>
+					<a href="delete.php?sv=<?=$_SESSION['student'][$key]['sv']?>"><button type="btn2" class="btn btn-danger">Delete</button></a>
 				</td>
 			</tr>
 		<?php endforeach ?>

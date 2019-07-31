@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Form đăng ký</h1>
-	<form id="form1" action="add_process.php" method="GET" role="form">
+	<form id="form1" action="add_process.php" method="post" role="form">
 		<div class="chung">
 			<p>Họ và tên :</p>
 			<input type="text" name="ten" placeholder="Nhập họ tên" class="name text" style="width: 100%;">

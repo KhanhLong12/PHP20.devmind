@@ -13,20 +13,20 @@
 	<br>
 	<ul>
 		<li>
-			Họ và tên: <?=$_SESSION['id'.$_GET['sv']]['ten']?>
+			Họ và tên: <?=$_SESSION['student']['id'.$_GET['sv']]['ten']?>
 		</li>
 		<li>
-			Mã sinh viên: <?=$_SESSION['id'.$_GET['sv']]['sv']?>
+			Mã sinh viên: <?=$_SESSION['student']['id'.$_GET['sv']]['sv']?>
 		</li>
-		<li>Số điện thoại: <?=$_SESSION['id'.$_GET['sv']]['sdt']?></li>
+		<li>Số điện thoại: <?=$_SESSION['student']['id'.$_GET['sv']]['sdt']?></li>
 		<li>
-			email: <?=$_SESSION['id'.$_GET['sv']]['email']?>
-		</li>
-		<li>
-			Giới tính: <?=$_SESSION['id'.$_GET['sv']]['n']?>
+			email: <?=$_SESSION['student']['id'.$_GET['sv']]['email']?>
 		</li>
 		<li>
-			Địa chỉ: <?=$_SESSION['id'.$_GET['sv']]['dc']?>
+			Giới tính: <?=$_SESSION['student']['id'.$_GET['sv']]['n']?>
+		</li>
+		<li>
+			Địa chỉ: <?=$_SESSION['student']['id'.$_GET['sv']]['dc']?>
 		</li>
 	</ul>
 	<br>

@@ -2,15 +2,19 @@
 
 
 	session_start();
+// echo "<pre>";
+// print_r($_POST);
+// echo "</pre>";
+// die;
 
-	$_SESSION['id' .$_GET['sv']] = array(
+	 $_SESSION['student']['id' .$_POST['sv']] = array(
 
-		'ten' => $_GET['ten'],
-		'sv' => $_GET['sv'],
-		'sdt' => $_GET['sdt'],
-		'email' => $_GET['email'],
-		'n' => $_GET['n'],
-		'dc' => $_GET['dc']
+	 	'ten' => $_POST['ten'],
+	 	'sv' => $_POST['sv'],
+		'sdt' => $_POST['sdt'],
+	 	'email' => $_POST['email'],
+		'n' => $_POST['n'],
+		'dc' => $_POST['dc']
 	);
 	header('Location: list.php');
  ?>
