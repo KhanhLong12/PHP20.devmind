@@ -6,6 +6,7 @@
 <html>
 <head>
 	<title>Thông tin</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
 	<h1>Thông tin sinh viên</h1>
@@ -28,5 +29,9 @@
 			Địa chỉ: <?=$_SESSION['id'.$_GET['sv']]['dc']?>
 		</li>
 	</ul>
+	<br>
+	<a href="list.php"><button type="button" class="btn btn-info">Back</button></a>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>

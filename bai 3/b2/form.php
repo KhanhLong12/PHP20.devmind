@@ -1,8 +1,4 @@
-<?php 
 
-	session_start();
-
- ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,22 +11,22 @@
 	<form id="form1" action="add_process.php" method="GET" role="form">
 		<div class="chung">
 			<p>Họ và tên :</p>
-			<input type="text" name="ten" placeholder="Nhập họ tên" class="name text">
+			<input type="text" name="ten" placeholder="Nhập họ tên" class="name text" style="width: 100%;">
 			<span class="name-err"></span>
 		</div>
 		<div class="chung">
 			<p>Mã sinh viên :</p>
-			<input type="text" name="sv" placeholder="Nhập mã sinh viên" class="masv text">
+			<input type="text" name="sv" placeholder="Nhập mã sinh viên" class="masv text" style="width: 100%;>
 			<span class="sv-err"></span>
 		</div>
 		<div class="chung">
 			<p>Số điện thoại :</p>
-			<input type="text" name="sdt" placeholder="Nhập số điện thoại" class="Sdt text">
+			<input type="text" name="sdt" placeholder="Nhập số điện thoại" class="Sdt text" style="width: 100%;>
 			<span class="phone-err"></span>
 		</div>
 		<div class="chung">
 		    <p>Email</p>
-		    <input type="email" name="email" class="email1 text" placeholder="Nhập email" >
+		    <input type="email" name="email" class="email1 text" placeholder="Nhập email" style="width: 100%;>
 		    <span class="email-err"></span>
 		</div>
 		<div class="chung">
@@ -41,14 +37,12 @@
 		</div>
 		<div class="chung">
 			<p>Đia chỉ :</p>
-			<input type="text" name="dc" placeholder="Nhập địa chỉ " class="DC text">
+			<input type="text" name="dc" placeholder="Nhập địa chỉ " class="DC text" style="width: 100%;>
 			<span class="dc-err"></span>
 		</div>
 		  <button type="ntb" name="ntb" class="btc btn btn-primary">Lưu thông tin</button>
 		  <button type="reset" class="btn btn-danger">Xóa tất cả</button>
 	</form>
-
-
 
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
