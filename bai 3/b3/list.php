@@ -1,5 +1,4 @@
 <?php 
-session_start();
 		$product = array();
 		$product[] = array(
 			'id' => 'sp1',
