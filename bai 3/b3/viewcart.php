@@ -18,6 +18,7 @@
 <?php 
 	if (isset($_SESSION['cart']) && $_SESSION['cart'] != null) {
 		echo "<table border='1' width='600'>";
+		echo "<tr>";
 		echo "<td>tên sản phẩm</td>";
 		echo "<td>Số lượng</td>";
 		echo "<td>Giá</td>";

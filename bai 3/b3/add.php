@@ -12,7 +12,7 @@ session_start();
 	 	$_SESSION['cart'][$idP] = $newProduct[$idP];
 	 } else {
 	 	if (array_key_exists($idP, $_SESSION['cart'])) {
-	 		$_SESSION['cart'][$idP]['số lượng'] +=1;
+	 		$_SESSION['cart'][$idP]['số lượng'] += 1;
 	 	}else{
 	 		$newProduct[$idP]['số lượng'] = 1;
 	 		$_SESSION['cart'][$idP] = $newProduct[$idP];
