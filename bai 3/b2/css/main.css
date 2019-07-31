@@ -1,0 +1,36 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+h1{
+	text-align: center;
+
+}
+#form1{
+	width: 80%;
+	margin: 0 auto;
+	background-color: #00b297;
+	border-radius: 20px;
+	padding: 30px;
+	margin-bottom: 50px;
+}
+.chung{
+	margin-bottom: 15px;
+}
+p{
+	margin-bottom: 8px !important;
+	color: azure;
+}
+
+.chung .text{
+	width: 70%;
+	height: 38px;
+	padding: 12px 6px;
+	border-radius: 5px;
+	display: inline-block;
+}
+span{
+	display: inline-block;
+	width: 25%;
+	color: red;
+}
