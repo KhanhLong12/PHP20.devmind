@@ -7,7 +7,7 @@ require_once 'list.php';
  <!DOCTYPE html>
  <html>
  <head>
- 	<title></title>
+ 	<title>b3: Khánh Long</title>
  	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
  </head>
  <body>
