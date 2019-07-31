@@ -11,6 +11,7 @@
 <body>
 	<h1>Danh sách sinh viên</h1>
 	<a href="form.php"><button type="button" class="btn btn-success">Thêm mới</button></a>
+	<p></p>
 	<br>
 	<table class="table">
   <thead class="thead-dark">
