@@ -29,7 +29,7 @@
 		      <th scope="col">Số lượng</th>
 		      <th scope="col">Giá</th>
 		      <th scope="col">Thành tiền</th>
-		      <th scope="col">Xóa sản phẩm</th>
+		      <th scope="col">Thao tác</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -41,7 +41,10 @@
 		      		<td><?=$_SESSION['cart'][$list]['số lượng']?></td>
 		      		<td><?=$_SESSION['cart'][$list]['price']?></td>
 		      		<td><?=$_SESSION['cart'][$list]['price']*$_SESSION['cart'][$list]['số lượng']?></td>
-		      		<td><a href="delete.php?id=<?=$_SESSION['cart'][$list]['id']?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
+		      		<td>
+		      			<a href="detail.php?id=<?=$_SESSION['cart'][$list]['id']?>"><button type="button" class="btn btn-info">Detail</button></a>
+		      			<a href="delete.php?id=<?=$_SESSION['cart'][$list]['id']?>"><button type="button" class="btn btn-danger">Delete</button></a>
+		      		</td>
 		      	</tr>	
 		      <?php endforeach ?>
 		    </tr>
