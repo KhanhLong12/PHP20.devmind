@@ -11,6 +11,12 @@ require_once 'list.php';
  	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
  </head>
  <body>
+  <?php 
+    if (isset($_COOKIE['msg'])) {
+     echo "<div class='alert alert-success' role='alert'>".$_COOKIE['msg'].
+              "</div>";
+    }
+   ?>
  	<table class="table table-bordered table-dark">
   <thead>
     <tr>
@@ -40,7 +46,10 @@ require_once 'list.php';
 		}
 	}
  ?>
-	<p>Đang có <?php echo $total; ?> sản phẩm trong giỏ</p>
+
+ <div class="alert alert-primary" role="alert">
+  Đang có <a href="#" class="alert-link"><?php echo $total; ?></a> sản phẩm trong giỏ.
+</div>
 	<a href="viewcart.php"><button type="button" class="btn btn-primary">Xem giỏ hàng</button></a>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>

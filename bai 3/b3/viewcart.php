@@ -10,34 +10,48 @@
 </head>
 <body>
 	<h1>thông tin giỏ hàng</h1>
-	<a href="giohang.php"><button type="button" class="btn btn-outline-primary">tiếp tục mua sản phẩm</button></a>
+	<table class="table table-bordered">
+		<?php 
+		$total = 0;
+				if (isset($_SESSION['cart']) && $_SESSION['cart'] != null) {
+				foreach ($_SESSION['cart'] as $list) {
+					$total += $list['số lượng'];
+				}
+			}
+		 ?>
+		 <div class="alert alert-primary" role="alert">
+			   Có <a href="#" class="alert-link"><?php echo $total; ?></a> sản phẩm trong giỏ hàng của bạn.
+		</div>
+		  <thead>
+		    <tr>	    	 
+		      <th scope="col">ID</th>
+		      <th scope="col">Tên sản phẩm</th>
+		      <th scope="col">Số lượng</th>
+		      <th scope="col">Giá</th>
+		      <th scope="col">Thành tiền</th>
+		      <th scope="col">Xóa sản phẩm</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <?php foreach ($_SESSION['cart'] as $list => $value): ?>
+		      	<tr>
+		      		<td><?=$_SESSION['cart'][$list]['id']?></td>
+		      		<td><?=$_SESSION['cart'][$list]['name']?></td>
+		      		<td><?=$_SESSION['cart'][$list]['số lượng']?></td>
+		      		<td><?=$_SESSION['cart'][$list]['price']?></td>
+		      		<td><?=$_SESSION['cart'][$list]['price']*$_SESSION['cart'][$list]['số lượng']?></td>
+		      		<td><a href="delete.php?id=<?=$_SESSION['cart'][$list]['id']?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
+		      	</tr>	
+		      <?php endforeach ?>
+		    </tr>
+		  </tbody>
+		</table>
+		<a href="giohang.php"><button type="button" class="btn btn-outline-primary">tiếp tục mua sản phẩm</button></a>
+</div>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
-<?php 
-	if (isset($_SESSION['cart']) && $_SESSION['cart'] != null) {
-		echo "<table border='1' width='600'>";
-		echo "<tr>";
-		echo "<td>ID</td>";
-		echo "<td>tên sản phẩm</td>";
-		echo "<td>Số lượng</td>";
-		echo "<td>Giá</td>";
-		echo "<td>Thành tiền</td>";
-		echo "<td>xóa sản phẩm</td>";
-		echo "</tr>";
-		foreach ($_SESSION['cart'] as $list) {
-			echo "<tr>";
-			echo "<td>".$list['id']."</td>";
-			echo "<td>".$list['name']."</td>";
-			echo "<td>".$list['số lượng']."</td>";
-			echo "<td>".$list['price']."</td>";
-			echo "<td>".($list['số lượng']*$list['price'])."</td>";
-			echo "<td><a href='delete.php?id=".$list['id']."'>delete</a></td>";
 
-			echo "</tr>";
-		}
-		echo "</table>";
-	}
 
- ?>
