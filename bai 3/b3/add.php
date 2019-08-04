@@ -11,7 +11,7 @@ session_start();
 	 	$newProduct[$idP]['số lượng'] = 1;
 	 	$_SESSION['cart'][$idP] = $newProduct[$idP];
 	 } else {
-	 	if (array_key_exists($idP, $_SESSION['cart'])) {
+	 	if (array_key_exists($idP, $_SESSION['cart'])) {//kiểm tra xem cái giá trị (id) có phải là khóa của giỏ hàng hay không.
 	 		$_SESSION['cart'][$idP]['số lượng'] += 1;
 	 	}else{
 	 		$newProduct[$idP]['số lượng'] = 1;
@@ -21,5 +21,3 @@ session_start();
 	 setcookie('msg','Thêm sản phẩm thành công!', time() + 1);
 	 header('Location: giohang.php');
  ?>
-
-
