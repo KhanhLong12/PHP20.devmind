@@ -1,6 +1,5 @@
 <?php 
 	session_start();
-	require_once 'data.php';
 
  ?>
  <!DOCTYPE html>
@@ -25,7 +24,7 @@
 	  	<?php foreach ($_SESSION['documents'] as $id => $value){ ?>
 	  		<tr>
 		      <td><?= $id ?></td>
-		      <td><?=$value['name']?></td>
+		      <td><?=$_SESSION['documents'][$id]['name']?></td>
 		      <td><a class="btn btn-success" href="">Download</a></td>
 		      <td><a class="btn btn-danger" href="remove.php?id = <?= $id ?>">Remove</a></td>
 		    </tr>
