@@ -9,9 +9,5 @@
 		'name' => 'front end',
 		'file_name' => 'file_name_2.doc',
 		);
-		$_SESSION['documents']['id03'] =array(
-		'name' => 'front end',
-		'file_name' => 'file_name_3.doc',
-		);
 
  ?>

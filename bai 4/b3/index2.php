@@ -10,6 +10,8 @@
  	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
  </head>
  <body>
+ 	<br>
+ 	<a href="upload.php"><button class="btn btn-success">UpLoad Document</button></a>
  	<table class="table">
 	  <thead class="thead-dark">
 	    <tr>
