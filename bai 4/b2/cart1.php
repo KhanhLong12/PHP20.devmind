@@ -13,8 +13,8 @@
 	<?php 
 		$total = 0;
 				if (isset($_SESSION['cart']) && $_SESSION['cart'] != null) {
-				foreach ($_SESSION['cart'] as $list) {
-					$total += $list['số lượng'];
+				foreach ($_SESSION['cart'] as $code) {
+					$total += $code['quanlity'];
 				}
 			}
 		 ?>
@@ -24,6 +24,8 @@
 
 	<table class="table table-bordered"> 
 			<?php 
+			$sum = 0;
+  			$dem = 0;
 				if (isset($_SESSION['cart']) && $_SESSION['cart'] != null) {
 					echo "<thead>";
 						echo "<tr>";
@@ -37,29 +39,41 @@
 					echo "</thead>";
 
 					echo "<tbody>";
-						foreach ($_SESSION['cart'] as $list => $value) {
+						foreach ($_SESSION['cart'] as $code => $product) {
 								echo "<tr>";
-									echo "<td>".$_SESSION['cart'][$list]['id']."</td>";
-									echo "<td>".$_SESSION['cart'][$list]['name']."</td>";
-									echo "<td>".$_SESSION['cart'][$list]['số lượng']."</td>";
-									echo "<td>".number_format($_SESSION['cart'][$list]['price'])."</td>";
-									echo "<td>".number_format($_SESSION['cart'][$list]['price']*$_SESSION['cart'][$list]['số lượng'])."</td>";
+									echo "<td>".$code."</td>";
+									echo "<td>".$product['name']."</td>";
+									echo "<td> <a class='btn btn-primary' href='add2cart1.php?code=".$code."'>+</a>".$product['quanlity']."<a class='btn btn-danger' href='delete1.php?code=".$code."'>-</a></td>";
+									echo "<td>".number_format($product['price'])."</td>";
+									echo "<td>".number_format($product['quanlity']*$product['price'])."</td>";
 									echo "<td>
-									<a href='detail.php?id=".$_SESSION['cart'][$list]['id']."'><button type='button' class='btn btn-info'>Detail</button></a>
-									<a href='delete.php?id=".$_SESSION['cart'][$list]['id']."'><button type='button' class='btn btn-danger'>Delete</button></a>
+									<a href='detail1.php?code=".$code."'><button type='button' class='btn btn-info'>Detail</button></a>
+									<a href='delete1.php?code=".$code."'><button type='button' class='btn btn-danger'>Delete</button></a>
+
 									</td>";
+									$sum += $product['quanlity']*$product['price'];
+									$dem += $product['quanlity'];
+
 								echo "</tr>";
 						}
 					echo "</tbody>";
 
 			}
 			 ?>
+
+			 <thead class="thead-light">
+			    <tr>
+			      <th colspan="2">Thành tiền</th>
+			      <th>Số lượng = <?= $dem ?></th>
+			      <th></th>
+			      <th>Tổng = <?=number_format($sum)?> VNĐ</th>
+			      <th></th>
+			    </tr>
+			  </thead>
 	</table>
-		<a href="giohang.php"><button type="button" class="btn btn-outline-primary">tiếp tục mua sản phẩm</button></a>
+		<a href="index1.php"><button type="button" class="btn btn-outline-primary">Home</button></a>
 </div>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
-
-

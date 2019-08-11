@@ -21,7 +21,7 @@
 			Bộ nhớ: <?=$_SESSION['cart'][$_GET['id']]['memory']?>
 		</li>
 		<li>
-			Giá sản phẩm: <?=$_SESSION['cart'][$_GET['id']]['price']?>
+			Giá sản phẩm: <?=number_format($_SESSION['cart'][$_GET['id']]['price'])?>
 		</li>
 	</ul>
 	<a href="viewcart.php"><button type="button" class="btn btn-warning">Quay lại giỏ hàng</button></a>

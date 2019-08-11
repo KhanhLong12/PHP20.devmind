@@ -8,8 +8,8 @@ session_start();
 	 }
 
 	 if (!isset($_SESSION['cart']) || $_SESSION['cart'] == null ) {
-	 	$newProduct[$idP]['số lượng'] = 1;
-	 	$_SESSION['cart'][$idP] = $newProduct[$idP];
+	 	$newProduct[$idP]['số lượng'] = 1;//thêm phần tử số lượng vào mảng
+	 	$_SESSION['cart'][$idP] = $newProduct[$idP];//cho toàn bộ thông tin vào giỏ hàng có id = $idp
 	 } else {
 	 	if (array_key_exists($idP, $_SESSION['cart'])) {//kiểm tra xem cái giá trị (id) có phải là khóa của giỏ hàng hay không.
 	 		$_SESSION['cart'][$idP]['số lượng'] += 1;

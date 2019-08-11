@@ -3,7 +3,7 @@ session_start();
 require_once 'list.php';
  ?>
 <meta charset="utf-8">
-<h3>Danh sách sản phẩm</h3>
+<h1 style="text-align: center;">Danh sách sản phẩm</h1>
  <!DOCTYPE html>
  <html>
  <head>
@@ -32,7 +32,7 @@ require_once 'list.php';
       	<tr>
       		<td><?=$product[$key]['id']?></td>
       		<td><?=$product[$key]['name']?></td>
-      		<td><?=$product[$key]['price']?></td>
+      		<td><?=number_format($product[$key]['price'])?></td>
       		<td><a href="add.php?id=<?=$product[$key]['id']?>"><button type="button" class="btn btn-success">Add to cart</button></td></a>
       	</tr>
       <?php endforeach ?>
