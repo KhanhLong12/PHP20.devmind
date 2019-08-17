@@ -1,18 +1,24 @@
 <?php 
-	session_start();
-	$_SESSION['documents'] = $_FILES;
 	if(isset($_POST['submit'])){ // kiểm tra xem button Submit đã được click hay chưa ? 
-        
-        $target_dir = "upload/";  // thư mục chứa file upload
+        require_once 'upload_file.php';
+
+       $uploads = file_upload("uploads","ANH_SP",500000,array('jpg', 'png'));
+       $target_dir = "uploads/";  // thư mục chứa file upload
 
         $target_file = $target_dir . basename($_FILES["ANH_SP"]["name"]); // link sẽ upload file lên
         
         if (move_uploaded_file($_FILES["ANH_SP"]["tmp_name"], $target_file)) { // nếu upload file không có lỗi 
             echo "The file ". basename( $_FILES["ANH_SP"]["name"]). " has been uploaded.";
-
         } else { // Upload file có lỗi 
             echo "Sorry, there was an error uploading your file.";
         }
+        // if(gettype($uploads) == "array"){
+        //     print_r($uploads); // Trả về mảng lỗi nếu ko upload được
+        // }else{
+        //     echo "File name is: " . $uploads; // Trả về tên file nếu upload thành công
+        // }
+    session_start();
+    $_SESSION['documents'][] = $uploads;
     }
  ?>
  <!DOCTYPE html>
@@ -23,8 +29,6 @@
  </head>
  <body >
  	<form action="" method="post" enctype="multipart/form-data">
- 	tên tài liệu
-    <input type="text" class="form-control" name="ten">
     Chọn file upload
     <input type="file" class="form-control" name="ANH_SP" id="ANH_SP"><br>
     <input type="submit" value="Upload Image" name="submit">

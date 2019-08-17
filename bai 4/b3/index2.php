@@ -1,6 +1,5 @@
 <?php 
 	session_start();
-
  ?>
  <!DOCTYPE html>
  <html>
@@ -21,10 +20,12 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	  	<?php foreach ($_SESSION['documents'] as $id => $value){ ?>
+	  	<?php for ($i=0; $i<count($_SESSION['documents']); $i++){ ?>
 	  		<tr>
-		      <td><?= $id ?></td>
-		      <td><?=$_SESSION['documents'][$id]['name']?></td>
+		      <td><?= $i+1 ?></td>
+		      <td>
+		      	<img src="upload/<?=$_SESSION['documents'][$i]?>">
+		      </td>
 		      <td><a class="btn btn-success" href="">Download</a></td>
 		      <td><a class="btn btn-danger" href="remove.php?id = <?= $id ?>">Remove</a></td>
 		    </tr>
