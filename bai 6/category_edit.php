@@ -52,6 +52,10 @@
                 <label for="">Description</label>
                 <input type="text" class="form-control"  id="" value="<?=$category['description']?>" name="description">
             </div>
+            <div class="form-group">
+                <label for="">created_at</label>
+                <input type="text" class="form-control"  id="" value="<?=$category['created_at']?>" name="created_at">
+            </div>
             <button class="btn btn-primary" name="submit" type="submit" >update</button>
             <a href="categories.php" class="btn btn-primary">Back</a>
         </form>
