@@ -22,7 +22,6 @@ $id = isset($_GET['$id'])?$_GET['$id']:0;
 		    <tr>
 		      <th scope="col">id</th>
 		      <th scope="col">name</th>
-		      <th scope="col">parent_id</th>
 		      <th scope="col">thumbnail</th>
 		      <th scope="col">slug</th>
 		      <th scope="col">description</th>
@@ -33,7 +32,6 @@ $id = isset($_GET['$id'])?$_GET['$id']:0;
 		    <tr>
 		      <td><?=$category['id']?></td>
 		      <td><?=$category['name']?></td>
-		      <td><?=$category['parent_id']?></td>
 		      <td><?=$category['thumbnail']?></td>
 		      <td><?=$category['slug']?></td>
 		      <td><?=$category['description']?></td>

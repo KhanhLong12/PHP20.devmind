@@ -36,10 +36,6 @@
                 <input type="text" class="form-control"  id="" value="<?=$category['name']?>" name="name">
             </div>
             <div class="form-group">
-                <label for="">Parent_id</label>
-                <input type="number" class="form-control" value="<?=$category['parent_id']?>" id="" name="parent_id">
-            </div>
-            <div class="form-group">
                 <label for="">thumbnail</label>
                 <input type="text" class="form-control" value="<?=$category['thumbnail']?>" id="" name="thumbnail">
             </div>
