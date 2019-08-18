@@ -2,8 +2,8 @@
 	if(isset($_POST['submit'])){ // kiểm tra xem button Submit đã được click hay chưa ? 
         require_once 'upload_file.php';
 
-       $uploads = file_upload("uploads","ANH_SP",500000,array('jpg', 'png'));
-       $target_dir = "uploads/";  // thư mục chứa file upload
+       $uploads = file_upload("upload","ANH_SP",5000000,array('jpg', 'png'));
+       $target_dir = "upload/";  // thư mục chứa file upload
 
         $target_file = $target_dir . basename($_FILES["ANH_SP"]["name"]); // link sẽ upload file lên
         
@@ -12,11 +12,6 @@
         } else { // Upload file có lỗi 
             echo "Sorry, there was an error uploading your file.";
         }
-        // if(gettype($uploads) == "array"){
-        //     print_r($uploads); // Trả về mảng lỗi nếu ko upload được
-        // }else{
-        //     echo "File name is: " . $uploads; // Trả về tên file nếu upload thành công
-        // }
     session_start();
     $_SESSION['documents'][] = $uploads;
     }

@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="">thumbnail</label>
-                <input type="text" class="form-control" id="" name="thumbnail">
+                <input type="file" class="form-control" id="" name="thumbnail">
             </div>
             <div class="form-group">
                 <label for="">slug</label>
@@ -41,7 +41,7 @@
                 <label for="">created_at</label>
                 <input type="text" class="form-control" id="" name="created_at">
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary" >Create</button>
             <a href="categories.php" class="btn btn-primary">Back</a>
         </form>
     </div>

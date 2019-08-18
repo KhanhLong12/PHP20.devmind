@@ -45,7 +45,7 @@
                 <td><?=$item['name']?></td>
                 <td><?=$item['email']?></td>
                 <td>
-                    <img src="https://image.thanhnien.vn/660/uploaded/quangtuyen/2019_03_05/u23tuanlinh_fpjh.jpg" width="100px" height="100px">
+                    <img src="images/<?=$item['avatar']?>" width="100px" height="100px">
                 </td>
                 <td>
                     <a href="user_detail.php?id=<?=$item['id']?>" class="btn btn-primary">Detail</a>

@@ -46,7 +46,7 @@
                 <td><?=$item['id']?></td>
                 <td><?=$item['name']?></td>
                 <td>
-                    <img src="https://video-thumbs.mediacdn.vn//vtv/2018/10/2/0210thoi-su-19h-15384852850441347953968-a1b84_thumb3.jpg" width="100px" height="100px">
+                    <img src="images/<?=$item['thumbnail']?>" width="100px" height="100px">
                 </td>
                 <td><?=$item['description']?></td>
                 <td>

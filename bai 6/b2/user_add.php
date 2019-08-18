@@ -1,5 +1,7 @@
 
+<?php 
 
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +31,9 @@
                 <label for="">email</label>
                 <input type="email" class="form-control" id="" name="email">
             </div>
-            <div class="form-group">
+            <div class="form-group" method="post" enctype="multipart/form-data">
                 <label for="">avatar</label>
-                <input type="text" class="form-control" id="" name="avatar">
+                <input type="file" class="form-control" name="avatar">
             </div>
             <div class="form-group">
                 <label for="">password</label>
@@ -41,7 +43,7 @@
                 <label for="">created_at</label>
                 <input type="text" class="form-control" id="" name="created_at">
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" value="Upload Image" name="submit" class="btn btn-primary">Create</button>
             <a href="uses.php" class="btn btn-primary">Back</a>
         </form>
     </div>
