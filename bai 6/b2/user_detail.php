@@ -22,6 +22,7 @@ $id = isset($_GET['$id'])?$_GET['$id']:0;
 		    <tr>
 		      <th scope="col">id</th>
 		      <th scope="col">name</th>
+		      <th scope="col">password</th>
 		      <th scope="col">email</th>
 		      <th scope="col">avatar</th>
 		      <th scope="col">created_at</th>	
@@ -31,6 +32,10 @@ $id = isset($_GET['$id'])?$_GET['$id']:0;
 		    <tr>
 		      <td><?=$user['id']?></td>
 		      <td><?=$user['name']?></td>
+		      <td><?=
+                $str = $user['password'];
+                echo md5($str);
+                ?></td>
 		      <td><?=$user['email']?></td>
 		      <td><?=$user['avatar']?></td>
 		      <td><?=$user['created_at']?></td>

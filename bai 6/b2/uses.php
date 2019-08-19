@@ -36,6 +36,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Mật khẩu</th>
                 <th>avatar</th>
                 <th>created_at</th>
             </thead>
@@ -44,6 +45,10 @@
                 <td><?=$item['id']?></td>
                 <td><?=$item['name']?></td>
                 <td><?=$item['email']?></td>
+                <td><?=
+                $str = $item['password'];
+                echo md5($str);
+                ?></td>
                 <td>
                     <img src="images/<?=$item['avatar']?>" width="100px" height="100px">
                 </td>

@@ -41,7 +41,8 @@
             </div>
             <div class="form-group">
                 <label for="">avatar</label>
-                <input type="text" class="form-control" value="<?=$user['avatar']?>" id="" name="avatar">
+                <img src="images/<?=$user['avatar']?>" width=100px height=100px>
+                <input type="file" class="form-control" id="" name="avatar">
             </div>
                 <input type="hidden" value="<?=$user['id']?>" name="id">
             <div class="form-group">
