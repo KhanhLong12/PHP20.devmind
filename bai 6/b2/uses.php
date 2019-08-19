@@ -36,7 +36,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Mật khẩu</th>
+                <th>password</th>
                 <th>avatar</th>
                 <th>created_at</th>
             </thead>

@@ -30,10 +30,11 @@
     <h3 align="center">DevMind - Education And Technology Group Update</h3>
     <h3 align="center">Update New user</h3>
     <hr>
-        <form action="user_edit_process.php" method="POST" role="form">
+        <form action="user_edit_process.php" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
                 <input type="text" class="form-control"  id="" value="<?=$user['name']?>" name="name">
+                <input type="hidden" value="<?=$user['id']?>" name="id">
             </div>
             <div class="form-group">
                 <label for="">email</label>
@@ -44,7 +45,6 @@
                 <img src="images/<?=$user['avatar']?>" width=100px height=100px>
                 <input type="file" class="form-control" id="" name="avatar">
             </div>
-                <input type="hidden" value="<?=$user['id']?>" name="id">
             <div class="form-group">
                 <label for="">created_at</label>
                 <input type="text" class="form-control"  id="" value="<?=$user['created_at']?>" name="created_at">
