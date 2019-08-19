@@ -1,10 +1,7 @@
 <?php 
-$id = isset($_GET['$id'])?$_GET['$id']:0;
-	$id = $_GET['id'];
-	// echo "$id";
-	 require_once "connection.php";
-	 $query = "SELECT * FROM categories WHERE id=".$id;
-	 // echo "$query";
+ require_once "connection.php";
+	$slug = $_GET['slug'];
+	 $query = "SELECT * FROM categories WHERE slug='".$slug."'";
 	 $result = $conn->query($query);
 	 $category = $result->fetch_assoc();
 
@@ -22,6 +19,7 @@ $id = isset($_GET['$id'])?$_GET['$id']:0;
 		    <tr>
 		      <th scope="col">id</th>
 		      <th scope="col">name</th>
+		      <th scope="col">parent_id</th>
 		      <th scope="col">thumbnail</th>
 		      <th scope="col">slug</th>
 		      <th scope="col">description</th>
@@ -32,6 +30,7 @@ $id = isset($_GET['$id'])?$_GET['$id']:0;
 		    <tr>
 		      <td><?=$category['id']?></td>
 		      <td><?=$category['name']?></td>
+		      <td><?=$category['parent_id']?></td>
 		      <td><?=$category['thumbnail']?></td>
 		      <td><?=$category['slug']?></td>
 		      <td><?=$category['description']?></td>

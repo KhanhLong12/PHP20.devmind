@@ -1,4 +1,12 @@
-
+<?php 
+    require_once "connection.php";
+    $query = "SELECT * FROM categories WHERE parent_id is null";
+    $result = $conn->query($query);
+    $categories = array();
+    while ($row= $result->fetch_assoc()) {
+        $categories[]= $row;
+    }
+ ?>
 
 <!DOCTYPE html>
 <html>
@@ -24,6 +32,15 @@
             <div class="form-group">
                 <label for="">Name</label>
                 <input type="text" class="form-control" id="" name="name">
+            </div>
+            <div class="form-group">
+                 <label for="">parent category</label>
+                 <select class="form-control" id="" name="parent_id">
+                    <option value="0">danh mục cha</option>
+                <?php foreach ($categories as $category){ ?>
+                    <option value="<?=$category['id']?>"><?=$category['name']?></option>
+                <?php } ?>
+            </select>
             </div>
             <div class="form-group">
                 <label for="">thumbnail</label>

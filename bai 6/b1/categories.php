@@ -50,7 +50,7 @@
                 </td>
                 <td><?=$item['description']?></td>
                 <td>
-                    <a href="category_detail.php?id=<?=$item['id']?>" class="btn btn-primary">Detail</a>
+                    <a href="category_detail.php?slug=<?=$item['slug']?>" class="btn btn-primary">Detail</a>
                     <a href="category_edit.php?id=<?=$item['id']?>" class="btn btn-success">Edit</a>
                     <a href="category_delete.php?id=<?=$item['id']?>" class="btn btn-danger">Delete</a>
                 </td>

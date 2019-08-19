@@ -36,8 +36,14 @@
                 <input type="text" class="form-control"  id="" value="<?=$category['name']?>" name="name">
             </div>
             <div class="form-group">
+                <label for="">parent_id</label>
+                <select class="form-control form-control-lg">
+                  <option></option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="">thumbnail</label>
-                <input type="text" class="form-control" value="<?=$category['thumbnail']?>" id="" name="thumbnail">
+                <input type="file" class="form-control" value="<?=$category['thumbnail']?>" id="" name="thumbnail">
             </div>
             <div class="form-group">
                 <label for="">slug</label>
