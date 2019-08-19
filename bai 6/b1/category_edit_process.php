@@ -2,7 +2,7 @@
 	require_once "connection.php";
 	$data = $_POST;	
 	$id = $data['id'];
-	 $target_dir = "images/";  // thư mục chứa file upload
+	   $target_dir = "images/";  // thư mục chứa file upload
 
         $target_file = $target_dir . basename($_FILES["thumbnail"]["name"]); // link sẽ upload file lên
         

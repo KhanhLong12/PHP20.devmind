@@ -34,10 +34,11 @@
     <h3 align="center">DevMind - Education And Technology Group Update</h3>
     <h3 align="center">Update Category</h3>
     <hr>
-        <form action="category_edit_process.php" method="POST" role="form">
+        <form action="category_edit_process.php" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
                 <input type="text" class="form-control"  id="" value="<?=$category['name']?>" name="name">
+                <input type="hidden" value="<?=$category['id']?>" name="id">
             </div>
             <div class="form-group">
                  <label for="">parent category</label>
@@ -57,7 +58,6 @@
                 <label for="">slug</label>
                 <input type="text" class="form-control" value="<?=$category['slug']?>" id="" name="slug">
             </div>
-                <input type="hidden" value="<?=$category['id']?>" name="id">
             <div class="form-group">
                 <label for="">Description</label>
                 <input type="text" class="form-control"  id="" value="<?=$category['description']?>" name="description">
