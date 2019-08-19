@@ -1,14 +1,18 @@
 <?php 
     $id = isset($_GET['$id'])?$_GET['$id']:0;
 	$id = $_GET['id'];
+
 	require_once "connection.php";
-	$query = "SELECT * FROM categories WHERE id=". $id;
-	 $result = $conn->query($query);
-	 $category = $result->fetch_assoc();
-    //  echo "<pre>";
-    // print_r($category);
-    // echo "</pre>";
-    // die();
+	$query = "SELECT * FROM categories WHERE parent_id is NULL";
+    $result = $conn->query($query);
+    $categories = array();
+    while ($row= $result->fetch_assoc()) {
+        $categories[]= $row;
+    }
+
+    $query_2 = "SELECT * FROM categories WHERE id=".$id;
+	 $result2 = $conn->query($query_2);
+	 $category = $result2->fetch_assoc();
  ?>
 <!DOCTYPE html>
 <html>
@@ -28,7 +32,7 @@
 <body>
     <div class="container">
     <h3 align="center">DevMind - Education And Technology Group Update</h3>
-    <h3 align="center">Update New Category</h3>
+    <h3 align="center">Update Category</h3>
     <hr>
         <form action="category_edit_process.php" method="POST" role="form">
             <div class="form-group">
@@ -36,14 +40,18 @@
                 <input type="text" class="form-control"  id="" value="<?=$category['name']?>" name="name">
             </div>
             <div class="form-group">
-                <label for="">parent_id</label>
-                <select class="form-control form-control-lg">
-                  <option></option>
-                </select>
+                 <label for="">parent category</label>
+                 <select class="form-control" id="" name="parent_id">
+                    <option value="0">danh mục cha</option>
+                <?php foreach ($categories as $cate){ ?>
+                    <option <?php if ($cate['id']== $category['parent_id']) echo "Selected" ?> value="<?=$category['id']?>"><?=$category['name']?></option>
+                <?php } ?>
+            </select>
             </div>
             <div class="form-group">
                 <label for="">thumbnail</label>
-                <input type="file" class="form-control" value="<?=$category['thumbnail']?>" id="" name="thumbnail">
+                <img src="images/<?=$category['thumbnail']?>" width=100px height=100px>
+                <input type="file" class="form-control" id="" name="thumbnail">
             </div>
             <div class="form-group">
                 <label for="">slug</label>
