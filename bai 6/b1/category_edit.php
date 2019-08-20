@@ -52,7 +52,7 @@
             <div class="form-group">
                 <label for="">thumbnail</label>
                 <img src="images/<?=$category['thumbnail']?>" width=100px height=100px>
-                <input type="file" class="form-control" id="" name="thumbnail">
+                <input type="file" value="<?=$category['thumbnail']?>" class="form-control" id="" name="thumbnail">
             </div>
             <div class="form-group">
                 <label for="">slug</label>
