@@ -43,7 +43,7 @@
             <div class="form-group">
                 <label for="">avatar</label>
                 <img src="images/<?=$user['avatar']?>" width=100px height=100px>
-                <input type="file" class="form-control" id="" name="avatar">
+                <input type="file" value="<?=$user['avatar']?>" class="form-control" id="" name="avatar">
             </div>
             <div class="form-group">
                 <label for="">created_at</label>
