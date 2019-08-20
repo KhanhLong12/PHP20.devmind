@@ -1,6 +1,14 @@
 <?php 
     require_once "connection.php";
     $slug = $_GET['slug'];
+    $query = "SELECT * FROM categories";
+    $result = $conn->query($query);
+    $categories = array();
+    while ($row= $result->fetch_assoc()) {
+        $categories[]= $row;
+    }
+
+
     $query = "SELECT * FROM posts WHERE slug='".$slug."'";
     $post = $conn->query($query)->fetch_assoc();
  ?>
@@ -47,8 +55,20 @@
                 <input value="<?=$post['content']?>" type="text" class="form-control" id="" name="content">
             </div>
             <div class="form-group">
+                <label for="">user_id</label>
+                <input value="<?=$post['user_id']?>" type="text" class="form-control" id="" name="content">
+            </div>
+            <div class="form-group">
                 <label for="">slug</label>
                 <input value="<?=$post['slug']?>" type="text" class="form-control" id="" name="slug">
+            </div>
+            <div class="form-group">
+                <label for="">category_id</label>
+                <select class="form-control" name="category_id">
+                    <?php foreach ($categories as $category) { ?>
+                       <option <?php if ($category['id']== $post['category_id']) echo "Selected" ?> value="<?=$category['id']?>"><?=$category['name']?></option>
+                    <?php } ?>
+                </select>
             </div>
            <div class="form-group">
                 <label for="">created_at</label>

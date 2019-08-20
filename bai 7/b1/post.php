@@ -49,7 +49,7 @@
                 <td>
                     <a href="post_detalt.php?slug=<?=$post['slug']?>" class="btn btn-primary">Detail</a>
                     <a href="post_edit.php?slug=<?=$post['slug']?>" class="btn btn-success">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="post_delete.php?id=<?=$post['id']?>" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             <?php } ?>

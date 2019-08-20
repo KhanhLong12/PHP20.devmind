@@ -8,9 +8,9 @@
         
         if (move_uploaded_file($_FILES["thumbnail"]["tmp_name"], $target_file)) { // nếu upload file không có lỗi 
             $file_name = basename($_FILES["thumbnail"]["name"]);
-            $query = "UPDATE posts SET title='".$data['title']."',description='".$data['description']."',thumbnail='".$file_name."',content='".$data['content']."',slug='".$data['slug']."',created_at='".$data['created_at']."' WHERE id=".$id;
+            $query = "UPDATE posts SET title='".$data['title']."',description='".$data['description']."',thumbnail='".$file_name."',content='".$data['content']."',slug='".$data['slug']."',category_id='".$data['category_id']."',created_at='".$data['created_at']."' WHERE id=".$id;
         } else { // Upload file có lỗi 
-           $query = "UPDATE posts SET title='".$data['title']."',description='".$data['description']."',content='".$data['content']."',slug='".$data['slug']."',created_at='".$data['created_at']."' WHERE id=".$id;
+           $query = "UPDATE posts SET title='".$data['title']."',description='".$data['description']."',content='".$data['content']."',slug='".$data['slug']."',category_id='".$data['category_id']."',created_at='".$data['created_at']."' WHERE id=".$id;
         }
         $status = $conn->query($query);
 				if ($status == true) {

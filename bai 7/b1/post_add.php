@@ -1,3 +1,13 @@
+<?php 
+    require_once "connection.php";
+    $query = "SELECT * FROM categories";
+    $result = $conn->query($query);
+    $categories = array();
+    while ($row= $result->fetch_assoc()) {
+        $categories[]= $row;
+    }
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,6 +48,14 @@
             <div class="form-group">
                 <label for="">slug</label>
                 <input type="text" class="form-control" id="" name="slug">
+            </div>
+            <div class="form-group">
+                <label for="">category_id</label>
+                <select class="form-control" name="category_id">
+                    <?php foreach ($categories as $category) { ?>
+                        <option value="<?=$category['id']?>"><?=$category['name']?></option>
+                    <?php } ?>
+                </select>
             </div>
            <div class="form-group">
                 <label for="">created_at</label>
