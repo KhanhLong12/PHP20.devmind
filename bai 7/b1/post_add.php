@@ -7,6 +7,13 @@
         $categories[]= $row;
     }
 
+    $query2 = "SELECT * FROM users";
+    $result2 = $conn->query($query2);
+    $users = array();
+    while ($row= $result2->fetch_assoc()) {
+        $users[]= $row;
+    }
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -44,6 +51,14 @@
             <div class="form-group">
                 <label for="">content</label>
                 <input type="text" class="form-control" id="" name="content">
+            </div>
+            <div class="form-group">
+                <label for="">user_id</label>
+                <select class="form-control" name="user_id">
+                    <?php foreach ($users as $user){ ?>
+                        <option value="<?=$user['id']?>"><?=$user['name']?></option>
+                    <?php } ?>        
+                </select>
             </div>
             <div class="form-group">
                 <label for="">slug</label>

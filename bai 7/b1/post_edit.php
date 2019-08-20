@@ -8,6 +8,13 @@
         $categories[]= $row;
     }
 
+    $query2 = "SELECT * FROM users";
+    $result2 = $conn->query($query2);
+    $users = array();
+    while ($row= $result2->fetch_assoc()) {
+        $users[]= $row;
+    }
+
 
     $query = "SELECT * FROM posts WHERE slug='".$slug."'";
     $post = $conn->query($query)->fetch_assoc();
@@ -56,7 +63,13 @@
             </div>
             <div class="form-group">
                 <label for="">user_id</label>
-                <input value="<?=$post['user_id']?>" type="text" class="form-control" id="" name="content">
+                <select class="form-control" name="user_id">
+                    <?php foreach ($users as $user){ ?>
+                        <option <?php if ($user['id'] == $post['user_id']) {
+                            echo "Selected";
+                        } ?> value="<?=$user['id']?>"><?=$user['name']?></option>
+                    <?php } ?>        
+                </select>
             </div>
             <div class="form-group">
                 <label for="">slug</label>
