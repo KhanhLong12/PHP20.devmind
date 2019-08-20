@@ -1,0 +1,22 @@
+<?php 
+	require_once "connection.php";
+	$data = $_POST;
+	$id = $data['id'];
+	$target_dir = "images/";  // thư mục chứa file upload
+
+        $target_file = $target_dir . basename($_FILES["thumbnail"]["name"]); // link sẽ upload file lên
+        
+        if (move_uploaded_file($_FILES["thumbnail"]["tmp_name"], $target_file)) { // nếu upload file không có lỗi 
+            $file_name = basename($_FILES["thumbnail"]["name"]);
+            $query = "UPDATE posts SET title='".$data['title']."',description='".$data['description']."',thumbnail='".$file_name."',content='".$data['content']."',slug='".$data['slug']."',created_at='".$data['created_at']."' WHERE id=".$id;
+        } else { // Upload file có lỗi 
+           $query = "UPDATE posts SET title='".$data['title']."',description='".$data['description']."',content='".$data['content']."',slug='".$data['slug']."',created_at='".$data['created_at']."' WHERE id=".$id;
+        }
+        $status = $conn->query($query);
+				if ($status == true) {
+					header('Location: post.php');
+					}else{
+						echo "error";
+					}
+
+ ?>
