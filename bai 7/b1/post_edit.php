@@ -83,11 +83,15 @@
                     <?php } ?>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="">view_count</label>
+                <input value="<?=$post['view_count']?>" type="text" class="form-control" id="" name="view_count">
+            </div>
            <div class="form-group">
                 <label for="">created_at</label>
                 <input value="<?=$post['created_at']?>" type="text" class="form-control" id="" name="created_at">
             </div>
-            <button type="submit" value="Upload Image" name="submit" class="btn btn-primary">Create</button>
+            <button type="submit" value="Upload Image" name="submit" class="btn btn-primary">Save</button>
             <a href="post.php" class="btn btn-primary">Back</a>
         </form>
     </div>

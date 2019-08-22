@@ -1,7 +1,6 @@
 <?php 
     $id = isset($_GET['$id'])?$_GET['$id']:0;
 	$id = $_GET['id'];
-
 	require_once "connection.php";
 	$query = "SELECT * FROM categories WHERE parent_id is NULL";
     $result = $conn->query($query);

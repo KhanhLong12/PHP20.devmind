@@ -54,6 +54,7 @@
             </div>
             <div class="form-group">
                 <label for="">user_id</label>
+                <option></option>
                 <select class="form-control" name="user_id">
                     <?php foreach ($users as $user){ ?>
                         <option value="<?=$user['id']?>"><?=$user['name']?></option>
@@ -71,6 +72,10 @@
                         <option value="<?=$category['id']?>"><?=$category['name']?></option>
                     <?php } ?>
                 </select>
+            </div>
+            <div class="form-group">
+                <label for="">view_count</label>
+                <input type="text" class="form-control" id="" name="view_count">
             </div>
            <div class="form-group">
                 <label for="">created_at</label>
