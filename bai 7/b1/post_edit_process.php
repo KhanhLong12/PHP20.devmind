@@ -18,5 +18,5 @@
 					}else{
 						echo "error";
 					}
-
+					setcookie('msg1','Chỉnh sửa bài post thành công',time()+2);
  ?>

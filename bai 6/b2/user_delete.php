@@ -6,4 +6,5 @@
 	// echo "$query";
 	$status = $conn->query($query);
 	header('Location: uses.php');
+	setcookie('msg2','Xóa user thành công',time()+2);
  ?>

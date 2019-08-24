@@ -18,6 +18,6 @@ session_start();
 	 		$_SESSION['cart'][$idP] = $newProduct[$idP];
 	 	}
 	 }
-	 setcookie('msg','Thêm sản phẩm thành công!', time() + 1);
+	 setcookie('msg','Thêm sản phẩm thành công!', time() + 2);
 	 header('Location: giohang.php');
  ?>

@@ -17,4 +17,5 @@ require_once "connection2.php";
 			} else{
 				header('Location: user_add.php');
 			}
+			 setcookie('msg1','Chỉnh sửa user thành công',time()+2);
  ?>

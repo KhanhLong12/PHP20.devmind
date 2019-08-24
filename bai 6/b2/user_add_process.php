@@ -17,6 +17,7 @@
 			} else{
 				header('Location: user_add.php');
 			}
+			setcookie('msg','thêm mới user thành công',time()+2);
         } else { // Upload file có lỗi 
             echo "Sorry, there was an error uploading your file.";
         }

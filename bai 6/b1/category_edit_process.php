@@ -26,4 +26,5 @@
             }else{
                 echo "error";
             }
+            setcookie('msg1','Chỉnh sửa category thành công',time()+2);
  ?>

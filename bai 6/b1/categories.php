@@ -30,6 +30,17 @@
 <body>
     <div class="container">
         <h3 class="text-center">--- CATEGORIES ---</h3>
+        <?php 
+        if (isset($_COOKIE['msg'])) {
+            echo "<div class='alert alert-success' role='alert'>".$_COOKIE['msg']."</div>";
+        }
+        if (isset($_COOKIE['msg1'])) {
+            echo "<div class='alert alert-success' role='alert'>".$_COOKIE['msg1']."</div>";
+        }
+        if (isset($_COOKIE['msg2'])) {
+            echo "<div class='alert alert-success' role='alert'>".$_COOKIE['msg2']."</div>";
+        }
+         ?>
         <a href="category_add.php" class="btn btn-primary">Add New Category</a>
         <table class="table">
             <thead>

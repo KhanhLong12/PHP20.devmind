@@ -7,10 +7,6 @@
 	}else{
 		unset($_SESSION['cart'][$Code]);
 	}
-	echo "<pre>";
-	print_r($_SESSION['cart']);
-	echo "</pre>";
-	die();
 	header('Location: giohang2.php');
 
  ?>
