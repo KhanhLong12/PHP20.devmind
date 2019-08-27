@@ -1,17 +1,3 @@
-<?php  
-    require_once "connection2.php";
-    //câu lệnh truy vấn
-    $query = "SELECT * FROM users";
-    //thực thi câu lệnh truy vấn
-    $result = $conn->query($query);
-    //tạo mảng lưu dữ liệu
-    $users = array();
-
-    while ($row = $result->fetch_assoc()) {
-        $users[] = $row;
-    }
- ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,7 +51,7 @@
                     <img src="images/<?=$item['avatar']?>" width="100px" height="100px">
                 </td>
                 <td>
-                    <a href="user_detail.php?id=<?=$item['id']?>" class="btn btn-primary">Detail</a>
+                    <a href="index.php?mod=user&act=detail&id=<?=$item['id']?>" class="btn btn-primary">Detail</a>
                     <a href="user_edit.php?id=<?=$item['id']?>" class="btn btn-success">Edit</a>
                     <a href="user_delete.php?id=<?=$item['id']?>" class="btn btn-danger">Delete</a>
                 </td>

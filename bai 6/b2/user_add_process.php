@@ -7,7 +7,7 @@
         
         if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) { // nếu upload file không có lỗi 
            $file_name = basename($_FILES["avatar"]["name"]);
-           $query = "INSERT INTO users (name,email,password,avatar,created_at) VALUES ('".$data['name']."','".$data['email']."','".$data['password']."','".$file_name."','".$data['created_at']."')";
+           $query = "INSERT INTO users (name,email,password,avatar,created_at) VALUES ('".$data['name']."','".$data['email']."','".md5($data['password'])."','".$file_name."','".$data['created_at']."')";
 			$status = $conn->query($query);
 	// echo "<pre>";
 	// print_r($status);

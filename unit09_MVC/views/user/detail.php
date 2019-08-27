@@ -1,14 +1,3 @@
-<?php 
-$id = isset($_GET['$id'])?$_GET['$id']:0;
-	$id = $_GET['id'];
-	// echo "$id";
-	 require_once "connection2.php";
-	 $query = "SELECT * FROM users WHERE id=".$id;
-	 // echo "$query";
-	 $result = $conn->query($query);
-	 $user = $result->fetch_assoc();
-
- ?>
  <!DOCTYPE html>
  <html>
  <head>
@@ -42,7 +31,6 @@ $id = isset($_GET['$id'])?$_GET['$id']:0;
 		    </tr>
 		  </tbody>
 	</table>
-	<a class="btn btn-primary" href="uses.php">Back</a>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
  </body>
  </html>
