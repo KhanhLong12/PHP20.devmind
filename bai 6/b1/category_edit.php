@@ -44,7 +44,7 @@
                  <select class="form-control" id="" name="parent_id">
                     <option value="0">danh mục cha</option>
                 <?php foreach ($categories as $cate){ ?>
-                    <option <?php if ($cate['id']== $category['parent_id']) echo "Selected" ?> value="<?=$category['id']?>"><?=$category['name']?></option>
+                    <option <?php if ($cate['id']== $category['parent_id']) echo "Selected" ?> value="<?=$category['id']?>"><?=$cate['name']?></option>
                 <?php } ?>
             </select>
             </div>
