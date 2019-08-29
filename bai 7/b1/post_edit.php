@@ -59,7 +59,7 @@
             </div>
             <div class="form-group">
                 <label for="">content</label>
-                <input value="<?=$post['content']?>" type="text" class="form-control" id="" name="content">
+                <textarea value="<?=$post['content']?>" class="form-control" id="content" name="content" cols="15" rows="15"></textarea> 
             </div>
             <div class="form-group">
                 <label for="">user_id</label>
@@ -95,5 +95,20 @@
             <a href="post.php" class="btn btn-primary">Back</a>
         </form>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>   
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+    <script type="text/javascript">
+        CKEDITOR.replace( 'content' );
+    </script>
+    <script>
+        $(document).ready(function(){
+            var content =CKEDITOR.instances['content'].getData();
+           // console.log(content);
+            $('textarea#content').val(result.content);
+        });
+    </script>
+    <script type="text/javascript">
+    </script>
 </body>
 </html>

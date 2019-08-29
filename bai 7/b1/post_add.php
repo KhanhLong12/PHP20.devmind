@@ -35,7 +35,7 @@
     <h3 align="center">Add New Post</h3>
     <hr>
         <form action="post_add_process.php" method="POST" role="form" enctype="multipart/form-data">
-            <div class="form-group">
+             <div class="form-group">
                 <label for="">title</label>
                 <input type="text" class="form-control" id="" name="title">
             </div>
@@ -49,9 +49,9 @@
             </div>
             <div class="form-group">
                 <label for="">content</label>
-                <input type="text" class="form-control" id="content" name="content">
+                <textarea class="form-control" id="content" name="content" cols="15" rows="15"> </textarea> 
             </div>
-            <div class="form-group">
+           <div class="form-group">
                 <label for="">user_id</label>
                 <option></option>
                 <select class="form-control" name="user_id">
@@ -94,7 +94,7 @@
         $(document).ready(function(){
             var content =CKEDITOR.instances['content'].getData();
            // console.log(content);
-            $('#content').value = content;
+            $('textarea#content').val(content);
         });
 
     </script>
