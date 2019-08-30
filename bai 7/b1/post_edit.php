@@ -59,7 +59,10 @@
             </div>
             <div class="form-group">
                 <label for="">content</label>
-                <textarea value="<?=$post['content']?>" class="form-control" id="content" name="content" cols="15" rows="15"></textarea> 
+                <textarea class="form-control" id="content" name="content" cols="15" rows="15">
+                    <?php echo (isset($post['content'])) ? $post['content']:""; ?>
+
+                </textarea> 
             </div>
             <div class="form-group">
                 <label for="">user_id</label>
